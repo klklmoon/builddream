@@ -14,3 +14,19 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+/**
+ * 后台路由规则
+ */
+Route::group(['namespace' => 'Admin', 'domain' => 'admin.build4dream.com'], function () {
+    Route::get('/home','IndexController@index')->name('home');
+    Route::get('login', 'Auth\LoginController@login')->name('login');
+    Route::post('login', 'Auth\LoginController@doLogin');
+    Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
