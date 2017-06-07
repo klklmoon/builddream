@@ -7,6 +7,7 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -24,6 +25,7 @@
         </div>
         <div class="input">
             <form class="layui-form" method="POST" action="{{ route('login') }}">
+                {{ csrf_field() }}
                 <div class="layui-form-item x-login-box">
                     <label for="username" class="layui-form-label">
                         <i class="layui-icon">&#xe612;</i>
@@ -38,12 +40,12 @@
                         <i class="layui-icon">&#xe628;</i>
                     </label>
                     <div class="layui-input-inline">
-                        <input type="password" id="pass" name="pass" required="" lay-verify="pass"
+                        <input type="password" id="pass" name="password" required="" lay-verify="password"
                                autocomplete="off" placeholder="******" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item" id="loginbtn">
-                    <button  class="layui-btn" lay-filter="save" lay-submit="">
+                    <button type="submit"  class="layui-btn" lay-filter="save" lay-submit="">
                         登 录
                     </button>
                 </div>
@@ -60,17 +62,7 @@
                 $ = layui.jquery;
                 var form = layui.form(),
                         layer = layui.layer;
-                //监听提交
-                form.on('submit(save)',
-                        function(data) {
-                            console.log(data);
-                            layer.alert(JSON.stringify(data.field), {
-                                title: '最终的提交信息'
-                            },function  () {
-                                location.href = "./index.html";
-                            })
-                            return false;
-                        });
+
 
             });
 
