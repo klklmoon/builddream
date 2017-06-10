@@ -1,170 +1,255 @@
 @extends('admin.layouts.main')
 
 @section('content')
-<div class="x-body">
-    <blockquote class="layui-elem-quote">
-        欢迎使用x-admin 后台模版！<span class="f-14">v1.0</span>官方交流群： 519492808
-    </blockquote>
-    <p>登录次数：18 </p>
-    <p>上次登录IP：222.35.131.79.1  上次登录时间： 2017-01-01 11:19:55</p>
-    <fieldset class="layui-elem-field layui-field-title site-title">
-        <legend><a name="default">信息统计</a></legend>
-    </fieldset>
-    <table class="layui-table">
-        <thead>
-        <tr>
-            <th>统计</th>
-            <th>资讯库</th>
-            <th>图片库</th>
-            <th>产品库</th>
-            <th>用户</th>
-            <th>管理员</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>总数</td>
-            <td>92</td>
-            <td>9</td>
-            <td>0</td>
-            <td>8</td>
-            <td>20</td>
-        </tr>
-        <tr>
-            <td>今日</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>昨日</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>本周</td>
-            <td>2</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>本月</td>
-            <td>2</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-        </tr>
-        </tbody>
-    </table>
-    <table class="layui-table">
-        <thead>
-        <tr>
-            <th colspan="2" scope="col">服务器信息</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <th width="30%">服务器计算机名</th>
-            <td><span id="lbServerName">http://127.0.0.1/</span></td>
-        </tr>
-        <tr>
-            <td>服务器IP地址</td>
-            <td>192.168.1.1</td>
-        </tr>
-        <tr>
-            <td>服务器域名</td>
-            <td>x.xuebingsi.com</td>
-        </tr>
-        <tr>
-            <td>服务器端口 </td>
-            <td>80</td>
-        </tr>
-        <tr>
-            <td>服务器IIS版本 </td>
-            <td>Microsoft-IIS/6.0</td>
-        </tr>
-        <tr>
-            <td>本文件所在文件夹 </td>
-            <td>D:\WebSite\HanXiPuTai.com\XinYiCMS.Web\</td>
-        </tr>
-        <tr>
-            <td>服务器操作系统 </td>
-            <td>Microsoft Windows NT 5.2.3790 Service Pack 2</td>
-        </tr>
-        <tr>
-            <td>系统所在文件夹 </td>
-            <td>C:\WINDOWS\system32</td>
-        </tr>
-        <tr>
-            <td>服务器脚本超时时间 </td>
-            <td>30000秒</td>
-        </tr>
-        <tr>
-            <td>服务器的语言种类 </td>
-            <td>Chinese (People's Republic of China)</td>
-        </tr>
-        <tr>
-            <td>.NET Framework 版本 </td>
-            <td>2.050727.3655</td>
-        </tr>
-        <tr>
-            <td>服务器当前时间 </td>
-            <td>2017-01-01 12:06:23</td>
-        </tr>
-        <tr>
-            <td>服务器IE版本 </td>
-            <td>6.0000</td>
-        </tr>
-        <tr>
-            <td>服务器上次启动到现在已运行 </td>
-            <td>7210分钟</td>
-        </tr>
-        <tr>
-            <td>逻辑驱动器 </td>
-            <td>C:\D:\</td>
-        </tr>
-        <tr>
-            <td>CPU 总数 </td>
-            <td>4</td>
-        </tr>
-        <tr>
-            <td>CPU 类型 </td>
-            <td>x86 Family 6 Model 42 Stepping 1, GenuineIntel</td>
-        </tr>
-        <tr>
-            <td>虚拟内存 </td>
-            <td>52480M</td>
-        </tr>
-        <tr>
-            <td>当前程序占用内存 </td>
-            <td>3.29M</td>
-        </tr>
-        <tr>
-            <td>Asp.net所占内存 </td>
-            <td>51.46M</td>
-        </tr>
-        <tr>
-            <td>当前Session数量 </td>
-            <td>8</td>
-        </tr>
-        <tr>
-            <td>当前SessionID </td>
-            <td>gznhpwmp34004345jz2q3l45</td>
-        </tr>
-        <tr>
-            <td>当前系统用户名 </td>
-            <td>NETWORK SERVICE</td>
-        </tr>
-        </tbody>
-    </table>
-</div>
+    <div class="tpl-content-wrapper">
+        <ol class="am-breadcrumb">
+            <li><a href="#" class="am-icon-home">首页</a></li>
+            <li><a href="#">分类</a></li>
+            <li class="am-active">内容</li>
+        </ol>
+        <div class="container-fluid am-cf">
+            <div class="row">
+                <div class="am-u-sm-12 am-u-md-12 am-u-lg-9">
+                    <div class="page-header-heading"><span class="am-icon-home page-header-heading-icon"></span> 部件首页 <small>Amaze UI</small></div>
+                    <p class="page-header-description">Amaze UI 含近 20 个 CSS 组件、20 余 JS 组件，更有多个包含不同主题的 Web 组件。</p>
+                </div>
+                <div class="am-u-lg-3 tpl-index-settings-button">
+                    <button type="button" class="page-header-button"><span class="am-icon-paint-brush"></span> 设置</button>
+                </div>
+            </div>
 
+        </div>
+
+        <div class="row-content am-cf">
+            <div class="row  am-cf">
+                <div class="am-u-sm-12 am-u-md-12 am-u-lg-4">
+                    <div class="widget am-cf">
+                        <div class="widget-head am-cf">
+                            <div class="widget-title am-fl">月度财务收支计划</div>
+                            <div class="widget-function am-fr">
+                                <a href="javascript:;" class="am-icon-cog"></a>
+                            </div>
+                        </div>
+                        <div class="widget-body am-fr">
+                            <div class="am-fl">
+                                <div class="widget-fluctuation-period-text">
+                                    ￥61746.45
+                                    <button class="widget-fluctuation-tpl-btn">
+                                        <i class="am-icon-calendar"></i>
+                                        更多月份
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="am-fr am-cf">
+                                <div class="widget-fluctuation-description-amount text-success" am-cf>
+                                    +￥30420.56
+
+                                </div>
+                                <div class="widget-fluctuation-description-text am-text-right">
+                                    8月份收入
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="am-u-sm-12 am-u-md-6 am-u-lg-4">
+                    <div class="widget widget-primary am-cf">
+                        <div class="widget-statistic-header">
+                            本季度利润
+                        </div>
+                        <div class="widget-statistic-body">
+                            <div class="widget-statistic-value">
+                                ￥27,294
+                            </div>
+                            <div class="widget-statistic-description">
+                                本季度比去年多收入 <strong>2593元</strong> 人民币
+                            </div>
+                            <span class="widget-statistic-icon am-icon-credit-card-alt"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="am-u-sm-12 am-u-md-6 am-u-lg-4">
+                    <div class="widget widget-purple am-cf">
+                        <div class="widget-statistic-header">
+                            本季度利润
+                        </div>
+                        <div class="widget-statistic-body">
+                            <div class="widget-statistic-value">
+                                ￥27,294
+                            </div>
+                            <div class="widget-statistic-description">
+                                本季度比去年多收入 <strong>2593元</strong> 人民币
+                            </div>
+                            <span class="widget-statistic-icon am-icon-support"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row am-cf">
+                <div class="am-u-sm-12 am-u-md-8">
+                    <div class="widget am-cf">
+                        <div class="widget-head am-cf">
+                            <div class="widget-title am-fl">月度财务收支计划</div>
+                            <div class="widget-function am-fr">
+                                <a href="javascript:;" class="am-icon-cog"></a>
+                            </div>
+                        </div>
+                        <div class="widget-body-md widget-body tpl-amendment-echarts am-fr" id="tpl-echarts">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="am-u-sm-12 am-u-md-4">
+                    <div class="widget am-cf">
+                        <div class="widget-head am-cf">
+                            <div class="widget-title am-fl">专用服务器负载</div>
+                            <div class="widget-function am-fr">
+                                <a href="javascript:;" class="am-icon-cog"></a>
+                            </div>
+                        </div>
+                        <div class="widget-body widget-body-md am-fr">
+
+                            <div class="am-progress-title">CPU Load <span class="am-fr am-progress-title-more">28% / 100%</span></div>
+                            <div class="am-progress">
+                                <div class="am-progress-bar" style="width: 15%"></div>
+                            </div>
+                            <div class="am-progress-title">CPU Load <span class="am-fr am-progress-title-more">28% / 100%</span></div>
+                            <div class="am-progress">
+                                <div class="am-progress-bar  am-progress-bar-warning" style="width: 75%"></div>
+                            </div>
+                            <div class="am-progress-title">CPU Load <span class="am-fr am-progress-title-more">28% / 100%</span></div>
+                            <div class="am-progress">
+                                <div class="am-progress-bar am-progress-bar-danger" style="width: 35%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row am-cf">
+                <div class="am-u-sm-12 am-u-md-12 am-u-lg-4 widget-margin-bottom-lg ">
+                    <div class="tpl-user-card am-text-center widget-body-lg">
+                        <div class="tpl-user-card-title">
+                            禁言小张
+                        </div>
+                        <div class="achievement-subheading">
+                            月度最佳员工
+                        </div>
+                        <img class="achievement-image" src="assets/img/user07.png" alt="">
+                        <div class="achievement-description">
+                            禁言小张在
+                            <strong>30天内</strong> 禁言了
+                            <strong>200多</strong>人。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="am-u-sm-12 am-u-md-12 am-u-lg-8 widget-margin-bottom-lg">
+
+                    <div class="widget am-cf widget-body-lg">
+
+                        <div class="widget-body  am-fr">
+                            <div class="am-scrollable-horizontal ">
+                                <table width="100%" class="am-table am-table-compact am-text-nowrap tpl-table-black " id="example-r">
+                                    <thead>
+                                    <tr>
+                                        <th>文章标题</th>
+                                        <th>作者</th>
+                                        <th>时间</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr class="gradeX">
+                                        <td>新加坡大数据初创公司 Latize 获 150 万美元风险融资</td>
+                                        <td>张鹏飞</td>
+                                        <td>2016-09-26</td>
+                                        <td>
+                                            <div class="tpl-table-black-operation">
+                                                <a href="javascript:;">
+                                                    <i class="am-icon-pencil"></i> 编辑
+                                                </a>
+                                                <a href="javascript:;" class="tpl-table-black-operation-del">
+                                                    <i class="am-icon-trash"></i> 删除
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="even gradeC">
+                                        <td>自拍的“政治角色”：观众背对希拉里自拍合影表示“支持”</td>
+                                        <td>天纵之人</td>
+                                        <td>2016-09-26</td>
+                                        <td>
+                                            <div class="tpl-table-black-operation">
+                                                <a href="javascript:;">
+                                                    <i class="am-icon-pencil"></i> 编辑
+                                                </a>
+                                                <a href="javascript:;" class="tpl-table-black-operation-del">
+                                                    <i class="am-icon-trash"></i> 删除
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="gradeX">
+                                        <td>关于创新管理，我想和你当面聊聊。</td>
+                                        <td>王宽师</td>
+                                        <td>2016-09-26</td>
+                                        <td>
+                                            <div class="tpl-table-black-operation">
+                                                <a href="javascript:;">
+                                                    <i class="am-icon-pencil"></i> 编辑
+                                                </a>
+                                                <a href="javascript:;" class="tpl-table-black-operation-del">
+                                                    <i class="am-icon-trash"></i> 删除
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="even gradeC">
+                                        <td>究竟是趋势带动投资，还是投资引领趋势？</td>
+                                        <td>着迷</td>
+                                        <td>2016-09-26</td>
+                                        <td>
+                                            <div class="tpl-table-black-operation">
+                                                <a href="javascript:;">
+                                                    <i class="am-icon-pencil"></i> 编辑
+                                                </a>
+                                                <a href="javascript:;" class="tpl-table-black-operation-del">
+                                                    <i class="am-icon-trash"></i> 删除
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="even gradeC">
+                                        <td>Docker领域再添一员，网易云发布“蜂巢”，加入云计算之争</td>
+                                        <td>醉里挑灯看键</td>
+                                        <td>2016-09-26</td>
+                                        <td>
+                                            <div class="tpl-table-black-operation">
+                                                <a href="javascript:;">
+                                                    <i class="am-icon-pencil"></i> 编辑
+                                                </a>
+                                                <a href="javascript:;" class="tpl-table-black-operation-del">
+                                                    <i class="am-icon-trash"></i> 删除
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+
+                                    <!-- more data -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection

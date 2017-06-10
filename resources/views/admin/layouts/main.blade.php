@@ -1,349 +1,302 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>{{config('app.name')}}后台管理系统</title>
+    <meta name="description" content="这是一个 index 页面">
+    <meta name="keywords" content="index">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="renderer" content="webkit">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="format-detection" content="telephone=no">
-    <link rel="stylesheet" href="{{asset('admin/css/x-admin.css')}}" media="all">
-</head>
-<body>
-<div class="layui-layout layui-layout-admin">
-    <div class="layui-header header header-demo">
-        <div class="layui-main">
-            <a class="logo" href="./index.html">{{config('app.name')}}--V1.0.0</a>
-            <ul class="layui-nav" lay-filter="">
-                <li class="layui-nav-item"><img src="{{asset('admin/images/logo.png')}}" class="layui-circle" style="border: 2px solid #A9B7B7;" width="35px" alt=""></li>
-                <li class="layui-nav-item">
-                    <a href="javascript:;">admin</a>
-                    <dl class="layui-nav-child"> <!-- 二级菜单 -->
-                        <dd><a href="">个人信息</a></dd>
-                        <dd><a href="">切换帐号</a></dd>
-                        <dd><a href="./login.html">退出</a></dd>
-                    </dl>
-                </li>
-                <!-- <li class="layui-nav-item">
-                  <a href="" title="消息">
-                      <i class="layui-icon" style="top: 1px;">&#xe63a;</i>
-                  </a>
-                  </li> -->
-                <li class="layui-nav-item x-index"><a href="/">前台首页</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="layui-side layui-bg-black x-side">
-        <div class="layui-side-scroll">
-            <ul class="layui-nav layui-nav-tree site-demo-nav" lay-filter="side">
-                <li class="layui-nav-item">
-                    <a class="javascript:;" href="javascript:;">
-                        <i class="layui-icon" style="top: 3px;">&#xe607;</i><cite>问题管理</cite>
-                    </a>
-                    <dl class="layui-nav-child">
-                        <dd class="">
-                        <dd class="">
-                            <a href="javascript:;" _href="./question-list.html">
-                                <cite>问题列表</cite>
-                            </a>
-                        </dd>
-                        </dd>
-                        <dd class="">
-                        <dd class="">
-                            <a href="javascript:;" _href="./question-del.html">
-                                <cite>删除问题</cite>
-                            </a>
-                        </dd>
-                        </dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item">
-                    <a class="javascript:;" href="javascript:;">
-                        <i class="layui-icon" style="top: 3px;">&#xe62d;</i><cite>产品管理</cite>
-                    </a>
-                    <dl class="layui-nav-child">
-                        <dd class="">
-                        <dd class="">
-                            <a href="javascript:;" _href="./welcome.html">
-                                <cite>产品列表（待开发）</cite>
-                            </a>
-                        </dd>
-                        </dd>
-                        <dd class="">
-                        <dd class="">
-                            <a href="javascript:;" _href="./welcome.html">
-                                <cite>品牌管理（待开发）</cite>
-                            </a>
-                        </dd>
-                        </dd>
-                        <dd class="">
-                        <dd class="">
-                            <a href="javascript:;" _href="./welcome.html">
-                                <cite>类型管理（待开发）</cite>
-                            </a>
-                        </dd>
-                        </dd>
-                        <dd class="">
-                        <dd class="">
-                            <a href="javascript:;" _href="./welcome.html">
-                                <cite>类型属性（待开发）</cite>
-                            </a>
-                        </dd>
-                        </dd>
-                        <dd class="">
-                        <dd class="">
-                            <a href="javascript:;" _href="./category.html">
-                                <cite>产品分类</cite>
-                            </a>
-                        </dd>
-                        </dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item">
-                    <a class="javascript:;" href="javascript:;">
-                        <i class="layui-icon" style="top: 3px;">&#xe634;</i><cite>轮播管理</cite>
-                    </a>
-                    <dl class="layui-nav-child">
-                        <dd class="">
-                        <dd class="">
-                            <a href="javascript:;" _href="./banner-list.html">
-                                <cite>轮播列表</cite>
-                            </a>
-                        </dd>
-                        </dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item">
-                    <a class="javascript:;" href="javascript:;">
-                        <i class="layui-icon" style="top: 3px;">&#xe642;</i><cite>订单管理</cite>
-                    </a>
-                    <dl class="layui-nav-child">
-                        <dd class="">
-                        <dd class="">
-                            <a href="javascript:;" _href="./welcome.html">
-                                <cite>订单列表（待开发）</cite>
-                            </a>
-                        </dd>
-                        </dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item">
-                    <a class="javascript:;" href="javascript:;">
-                        <i class="layui-icon" style="top: 3px;">&#xe630;</i><cite>分类管理</cite>
-                    </a>
-                    <dl class="layui-nav-child">
-                        <dd class="">
-                            <a href="javascript:;" _href="./category.html">
-                                <cite>分类列表</cite>
-                            </a>
-                        </dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item">
-                    <a class="javascript:;" href="javascript:;">
-                        <i class="layui-icon" style="top: 3px;">&#xe606;</i><cite>评论管理</cite>
-                    </a>
-                    <dl class="layui-nav-child">
-                        <dd class="">
-                            <a href="javascript:;" _href="./comment-list.html">
-                                <cite>评论列表</cite>
-                            </a>
-                        </dd>
-                        <dd class="">
-                            <a href="javascript:;" _href="./feedback-list.html">
-                                <cite>意见反馈</cite>
-                            </a>
-                        </dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item">
-                    <a class="javascript:;" href="javascript:;">
-                        <i class="layui-icon" style="top: 3px;">&#xe612;</i><cite>会员管理</cite>
-                    </a>
-                    <dl class="layui-nav-child">
-                        <dd class="">
-                            <a href="javascript:;" _href="member-list.html">
-                                <cite>会员列表</cite>
-                            </a>
-                        </dd>
-                        <dd class="">
-                            <a href="javascript:;" _href="./member-del.html">
-                                <cite>删除会员</cite>
-                            </a>
-                        </dd>
-                        <dd class="">
-                            <a href="javascript:;" _href="./member-level.html">
-                                <cite>等级管理</cite>
-                            </a>
-                        </dd>
-                        <dd class="">
-                            <a href="javascript:;" _href="./member-kiss.html">
-                                <cite>积分管理</cite>
-                            </a>
-                        </dd>
-                        <dd class="">
-                            <a href="javascript:;" _href="./member-view.html">
-                                <cite>浏览记录</cite>
-                            </a>
-                        </dd>
-                        <dd class="">
-                            <a href="javascript:;" _href="./member-view.html">
-                                <cite>分享记录</cite>
-                            </a>
-                        </dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item">
-                    <a class="javascript:;" href="javascript:;">
-                        <i class="layui-icon" style="top: 3px;">&#xe613;</i><cite>管理员管理</cite>
-                    </a>
-                    <dl class="layui-nav-child">
-                        <dd class="">
-                            <a href="javascript:;" _href="./admin-list.html">
-                                <cite>管理员列表</cite>
-                            </a>
-                        </dd>
-                        <dd class="">
-                            <a href="javascript:;" _href="./admin-role.html">
-                                <cite>角色管理</cite>
-                            </a>
-                        </dd>
-                        <dd class="">
-                            <a href="javascript:;" _href="./admin-cate.html">
-                                <cite>权限分类</cite>
-                            </a>
-                        </dd>
-                        <dd class="">
-                            <a href="javascript:;" _href="./admin-rule.html">
-                                <cite>权限管理</cite>
-                            </a>
-                        </dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item">
-                    <a class="javascript:;" href="javascript:;">
-                        <i class="layui-icon" style="top: 3px;">&#xe629;</i><cite>系统统计</cite>
-                    </a>
-                    <dl class="layui-nav-child">
-                        <dd class="">
-                            <a href="javascript:;" _href="./echarts1.html">
-                                <cite>拆线图</cite>
-                            </a>
-                        </dd>
-                        <dd class="">
-                            <a href="javascript:;" _href="./echarts2.html">
-                                <cite>柱状图</cite>
-                            </a>
-                        </dd>
-                        <dd class="">
-                            <a href="javascript:;" _href="./echarts3.html">
-                                <cite>地图</cite>
-                            </a>
-                        </dd>
-                        <dd class="">
-                            <a href="javascript:;" _href="./echarts4.html">
-                                <cite>饼图</cite>
-                            </a>
-                        </dd>
-                        <dd class="">
-                            <a href="javascript:;" _href="./echarts5.html">
-                                <cite>雷达图</cite>
-                            </a>
-                        </dd>
-                        <dd class="">
-                            <a href="javascript:;" _href="./echarts6.html">
-                                <cite>k线图</cite>
-                            </a>
-                        </dd>
-                        <dd class="">
-                            <a href="javascript:;" _href="./echarts7.html">
-                                <cite>热力图</cite>
-                            </a>
-                        </dd>
-                        <dd class="">
-                            <a href="javascript:;" _href="./echarts8.html">
-                                <cite>仪表图</cite>
-                            </a>
-                        </dd>
-                        <dd class="">
-                            <a href="http://echarts.baidu.com/examples.html" target="_blank" _href="./welcome.html">
-                                <cite>更多案例</cite>
-                            </a>
-                        </dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item">
-                    <a class="javascript:;" href="javascript:;">
-                        <i class="layui-icon" style="top: 3px;">&#xe614;</i><cite>系统设置</cite>
-                    </a>
-                    <dl class="layui-nav-child">
-                        <dd class="">
-                            <a href="javascript:;" _href="./sys-set.html">
-                                <cite>系统设置</cite>
-                            </a>
-                        </dd>
-                        <dd class="">
-                            <a href="javascript:;" _href="./sys-data.html">
-                                <cite>数字字典</cite>
-                            </a>
-                        </dd>
-                        <dd class="">
-                            <a href="javascript:;" _href="./sys-shield.html">
-                                <cite>屏蔽词</cite>
-                            </a>
-                        </dd>
-                        <dd class="">
-                            <a href="javascript:;" _href="./sys-log.html">
-                                <cite>系统日志</cite>
-                            </a>
-                        </dd>
-                        <dd class="">
-                            <a href="javascript:;" _href="./sys-link.html">
-                                <cite>友情链接</cite>
-                            </a>
-                        </dd>
-                        <dd class="">
-                            <a href="javascript:;" _href="./sys-qq.html">
-                                <cite>第三方登录</cite>
-                            </a>
-                        </dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item" style="height: 30px; text-align: center">
-                </li>
-            </ul>
-        </div>
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="icon" type="image/png" href="{{asset('admin/i/favicon.png')}}">
+    <link rel="apple-touch-icon-precomposed" href="{{asset('admin/i/app-icon72x72@2x.png')}}">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+    <script src="{{asset('admin/js/echarts.min.js')}}"></script>
+    <link rel="stylesheet" href="{{asset('admin/css/amazeui.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('admin/css/amazeui.datatables.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('admin/css/app.css')}}">
+    <script src="{{asset('admin/js/jquery.min.js')}}"></script>
 
-    </div>
-    <div class="layui-tab layui-tab-card site-demo-title x-main" lay-filter="x-tab" lay-allowclose="true">
-        <div class="x-slide_left"></div>
-        <div class="layui-tab-content site-demo site-demo-body">
-            <div class="layui-tab-item layui-show">
-                @yield('content')
-                <div class="layui-footer footer footer-demo">
-                    <div class="layui-main">
-                        <p>
-                            <a href="/">
-                                Copyright ©2017 {{config('app.name')}} All Rights Reserved.
-                            </a>
-                        </p>
-                        <p>
-                            <a href="./" target="_blank">
-                                本后台系统kelvin技术支持
-                            </a>
-                        </p>
-                    </div>
-                </div>
+</head>
+
+<body class="theme-white" data-type="index">
+<div class="am-g tpl-g">
+    <!-- 头部 -->
+    <header>
+        <!-- logo -->
+        <div class="am-fl tpl-header-logo">
+            <a href="javascript:;"><img src="{{asset('admin/img/logo.png')}}" alt=""></a>
+        </div>
+        <!-- 右侧内容 -->
+        <div class="tpl-header-fluid">
+            <!-- 侧边切换 -->
+            <div class="am-fl tpl-header-switch-button am-icon-list">
+                    <span>
+
+                </span>
+            </div>
+            <!-- 搜索 -->
+            <div class="am-fl tpl-header-search">
+                <form class="tpl-header-search-form" action="javascript:;">
+                    <button class="tpl-header-search-btn am-icon-search"></button>
+                    <input class="tpl-header-search-box" type="text" placeholder="搜索内容...">
+                </form>
+            </div>
+            <!-- 其它功能-->
+            <div class="am-fr tpl-header-navbar">
+                <ul>
+                    <!-- 欢迎语 -->
+                    <li class="am-text-sm tpl-header-navbar-welcome">
+                        <a href="javascript:;">欢迎你, <span>{{Auth::user()->username}}</span> </a>
+                    </li>
+
+                    <!-- 新邮件 -->
+                    <li class="am-dropdown tpl-dropdown" data-am-dropdown>
+                        <a href="javascript:;" class="am-dropdown-toggle tpl-dropdown-toggle" data-am-dropdown-toggle>
+                            <i class="am-icon-envelope"></i>
+                            <span class="am-badge am-badge-success am-round item-feed-badge">4</span>
+                        </a>
+                        <!-- 弹出列表 -->
+                        <ul class="am-dropdown-content tpl-dropdown-content">
+                            <li class="tpl-dropdown-menu-messages">
+                                <a href="javascript:;" class="tpl-dropdown-menu-messages-item am-cf">
+                                    <div class="menu-messages-ico">
+                                        <img src="{{asset('admin/img/user04.png')}}" alt="">
+                                    </div>
+                                    <div class="menu-messages-time">
+                                        3小时前
+                                    </div>
+                                    <div class="menu-messages-content">
+                                        <div class="menu-messages-content-title">
+                                            <i class="am-icon-circle-o am-text-success"></i>
+                                            <span>夕风色</span>
+                                        </div>
+                                        <div class="am-text-truncate"> Amaze UI 的诞生，依托于 GitHub 及其他技术社区上一些优秀的资源；Amaze UI 的成长，则离不开用户的支持。 </div>
+                                        <div class="menu-messages-content-time">2016-09-21 下午 16:40</div>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li class="tpl-dropdown-menu-messages">
+                                <a href="javascript:;" class="tpl-dropdown-menu-messages-item am-cf">
+                                    <div class="menu-messages-ico">
+                                        <img src="{{asset('admin/img/user02.png')}}" alt="">
+                                    </div>
+                                    <div class="menu-messages-time">
+                                        5天前
+                                    </div>
+                                    <div class="menu-messages-content">
+                                        <div class="menu-messages-content-title">
+                                            <i class="am-icon-circle-o am-text-warning"></i>
+                                            <span>禁言小张</span>
+                                        </div>
+                                        <div class="am-text-truncate"> 为了能最准确的传达所描述的问题， 建议你在反馈时附上演示，方便我们理解。 </div>
+                                        <div class="menu-messages-content-time">2016-09-16 上午 09:23</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="tpl-dropdown-menu-messages">
+                                <a href="javascript:;" class="tpl-dropdown-menu-messages-item am-cf">
+                                    <i class="am-icon-circle-o"></i> 进入列表…
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- 新提示 -->
+                    <li class="am-dropdown" data-am-dropdown>
+                        <a href="javascript:;" class="am-dropdown-toggle" data-am-dropdown-toggle>
+                            <i class="am-icon-bell"></i>
+                            <span class="am-badge am-badge-warning am-round item-feed-badge">5</span>
+                        </a>
+
+                        <!-- 弹出列表 -->
+                        <ul class="am-dropdown-content tpl-dropdown-content">
+                            <li class="tpl-dropdown-menu-notifications">
+                                <a href="javascript:;" class="tpl-dropdown-menu-notifications-item am-cf">
+                                    <div class="tpl-dropdown-menu-notifications-title">
+                                        <i class="am-icon-line-chart"></i>
+                                        <span> 有6笔新的销售订单</span>
+                                    </div>
+                                    <div class="tpl-dropdown-menu-notifications-time">
+                                        12分钟前
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="tpl-dropdown-menu-notifications">
+                                <a href="javascript:;" class="tpl-dropdown-menu-notifications-item am-cf">
+                                    <div class="tpl-dropdown-menu-notifications-title">
+                                        <i class="am-icon-star"></i>
+                                        <span> 有3个来自人事部的消息</span>
+                                    </div>
+                                    <div class="tpl-dropdown-menu-notifications-time">
+                                        30分钟前
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="tpl-dropdown-menu-notifications">
+                                <a href="javascript:;" class="tpl-dropdown-menu-notifications-item am-cf">
+                                    <div class="tpl-dropdown-menu-notifications-title">
+                                        <i class="am-icon-folder-o"></i>
+                                        <span> 上午开会记录存档</span>
+                                    </div>
+                                    <div class="tpl-dropdown-menu-notifications-time">
+                                        1天前
+                                    </div>
+                                </a>
+                            </li>
+
+
+                            <li class="tpl-dropdown-menu-notifications">
+                                <a href="javascript:;" class="tpl-dropdown-menu-notifications-item am-cf">
+                                    <i class="am-icon-bell"></i> 进入列表…
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- 退出 -->
+                    <li class="am-text-sm">
+                        <a href="{{ url('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                            <span class="am-icon-sign-out"></span> 退出
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
+
+    </header>
+    <!-- 侧边导航栏 -->
+    <div class="left-sidebar">
+        <!-- 用户信息 -->
+        <div class="tpl-sidebar-user-panel">
+            <div class="tpl-user-panel-slide-toggleable">
+                <div class="tpl-user-panel-profile-picture">
+                    <img src="{{asset('admin/img/user04.png')}}" alt="">
+                </div>
+                    <span class="user-panel-logged-in-text">
+              <i class="am-icon-circle-o am-text-success tpl-user-panel-status-icon"></i>
+              禁言小张
+          </span>
+                <a href="javascript:;" class="tpl-user-panel-action-link"> <span class="am-icon-pencil"></span> 账号设置</a>
+            </div>
+        </div>
+
+        <!-- 菜单 -->
+        <ul class="sidebar-nav">
+            <li class="sidebar-nav-link">
+                <a href="{{url('home')}}" class="active"><i class="am-icon-home sidebar-nav-link-logo"></i> 首页</a>
+            </li>
+            <li class="sidebar-nav-link">
+                <a href="javascript:;" class="sidebar-nav-sub-title"><i class="am-icon-user sidebar-nav-link-logo"></i> 用户管理<span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span></a>
+                <ul class="sidebar-nav sidebar-nav-sub">
+                    <li class="sidebar-nav-link">
+                        <a href="table-list.html"><span class="am-icon-angle-right sidebar-nav-link-logo"></span> 用户列表</a>
+                    </li>
+                    <li class="sidebar-nav-link">
+                        <a href="table-list-img.html"><span class="am-icon-angle-right sidebar-nav-link-logo"></span> 角色列表</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="sidebar-nav-link">
+                <a href="javascript:;" class="sidebar-nav-sub-title"><i class="am-icon-user sidebar-nav-link-logo"></i> 项目管理<span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span></a>
+                <ul class="sidebar-nav sidebar-nav-sub">
+                    <li class="sidebar-nav-link">
+                        <a href="table-list.html"><span class="am-icon-angle-right sidebar-nav-link-logo"></span> 用户列表</a>
+                    </li>
+                    <li class="sidebar-nav-link">
+                        <a href="table-list-img.html"><span class="am-icon-angle-right sidebar-nav-link-logo"></span> 角色列表</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="sidebar-nav-link">
+                <a href="javascript:;" class="sidebar-nav-sub-title"><i class="am-icon-tasks sidebar-nav-link-logo"></i> 任务管理<span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span></a>
+                <ul class="sidebar-nav sidebar-nav-sub">
+                    <li class="sidebar-nav-link">
+                        <a href="table-list.html"><span class="am-icon-angle-right sidebar-nav-link-logo"></span> 用户列表</a>
+                    </li>
+                    <li class="sidebar-nav-link">
+                        <a href="table-list-img.html"><span class="am-icon-angle-right sidebar-nav-link-logo"></span> 角色列表</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="sidebar-nav-link">
+                <a href="calendar.html">
+                    <i class="am-icon-calendar sidebar-nav-link-logo"></i> 日历
+                </a>
+            </li>
+            <li class="sidebar-nav-link">
+                <a href="form.html">
+                    <i class="am-icon-wpforms sidebar-nav-link-logo"></i> 表单
+
+                </a>
+            </li>
+            <li class="sidebar-nav-link">
+                <a href="chart.html">
+                    <i class="am-icon-bar-chart sidebar-nav-link-logo"></i> 图表
+
+                </a>
+            </li>
+
+            <li class="sidebar-nav-heading">Page<span class="sidebar-nav-heading-info"> 常用页面</span></li>
+            <li class="sidebar-nav-link">
+                <a href="javascript:;" class="sidebar-nav-sub-title">
+                    <i class="am-icon-table sidebar-nav-link-logo"></i> 数据列表
+                    <span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
+                </a>
+                <ul class="sidebar-nav sidebar-nav-sub">
+                    <li class="sidebar-nav-link">
+                        <a href="table-list.html">
+                            <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 文字列表
+                        </a>
+                    </li>
+
+                    <li class="sidebar-nav-link">
+                        <a href="table-list-img.html">
+                            <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 图文列表
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="sidebar-nav-link">
+                <a href="sign-up.html">
+                    <i class="am-icon-clone sidebar-nav-link-logo"></i> 注册
+                    <span class="am-badge am-badge-secondary sidebar-nav-link-logo-ico am-round am-fr am-margin-right-sm">6</span>
+                </a>
+            </li>
+            <li class="sidebar-nav-link">
+                <a href="login.html">
+                    <i class="am-icon-key sidebar-nav-link-logo"></i> 登录
+                </a>
+            </li>
+            <li class="sidebar-nav-link">
+                <a href="404.html">
+                    <i class="am-icon-tv sidebar-nav-link-logo"></i> 404错误
+                </a>
+            </li>
+
+        </ul>
     </div>
-    <div class="site-mobile-shade">
+     <!-- 内容区域 -->
+    @yield('content')
+    <div data-am-widget="gotop" class="am-gotop am-gotop-fixed" >
+        <a href="#top" title="">
+            <img class="am-gotop-icon-custom" src="http://amazeui.b0.upaiyun.com/assets/i/cpts/gotop/goTop.gif" />
+        </a>
     </div>
 </div>
-<script src="{{asset('admin/lib/layui/layui.js')}}" charset="utf-8"></script>
-<script src="{{asset('admin/js/x-admin.js')}}"></script>
+
+<script src="{{asset('admin/js/amazeui.min.js')}}"></script>
+<script src="{{asset('admin/js/amazeui.datatables.min.js')}}"></script>
+<script src="{{asset('admin/js/dataTables.responsive.min.js')}}"></script>
+<script src="{{asset('admin/js/app.js')}}"></script>
+
 </body>
+
 </html>

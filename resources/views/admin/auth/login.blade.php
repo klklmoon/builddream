@@ -1,72 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>{{config('app.name')}}后台管理系统</title>
+    <meta name="description" content="这是一个 index 页面">
+    <meta name="keywords" content="index">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="renderer" content="webkit">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="format-detection" content="telephone=no">
-    <link rel="stylesheet" href="{{asset('admin/css/x-admin.css')}}" media="all">
+    <link rel="icon" type="image/png" href="{{asset('admin/i/favicon.png')}}">
+    <link rel="apple-touch-icon-precomposed" href="{{asset('admin/i/app-icon72x72@2x.png')}}">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+    <link rel="stylesheet" href="{{asset('admin/css/amazeui.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('admin/css/amazeui.datatables.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('admin/css/app.css')}}">
+    <script src="{{asset('admin/js/jquery.min.js')}}"></script>
+
 </head>
 
-<body style="background-color: #393D49">
-<div class="x-box">
-    <div class="x-top">
-    </div>
-    <div class="x-mid">
-        <div class="x-avtar">
-            <img src="{{asset('admin/images/logo.png')}}" alt="">
-        </div>
-        <div class="input">
-            <form class="layui-form" method="POST" action="{{ route('login') }}">
-                {{ csrf_field() }}
-                <div class="layui-form-item x-login-box">
-                    <label for="username" class="layui-form-label">
-                        <i class="layui-icon">&#xe612;</i>
-                    </label>
-                    <div class="layui-input-inline">
-                        <input type="text" id="username" name="username" required="" lay-verify="username"
-                               autocomplete="off" placeholder="username" class="layui-input">
-                    </div>
+<body class="theme-white" data-type="login">
+<div class="am-g tpl-g">
+    <div class="tpl-login">
+        <div class="tpl-login-content">
+            <div class="tpl-login-logo">
+
+            </div>
+            <form class="am-form tpl-form-line-form" method="POST" action="{{ url('login')}}">
+            {{ csrf_field() }}
+                <div class="am-form-group">
+                    <input type="text" class="tpl-form-input" id="user-name" name="username" placeholder="请输入账号">
+
                 </div>
-                <div class="layui-form-item x-login-box">
-                    <label for="pass" class="layui-form-label">
-                        <i class="layui-icon">&#xe628;</i>
-                    </label>
-                    <div class="layui-input-inline">
-                        <input type="password" id="pass" name="password" required="" lay-verify="password"
-                               autocomplete="off" placeholder="******" class="layui-input">
-                    </div>
+
+                <div class="am-form-group">
+                    <input type="password" class="tpl-form-input" id="user-name" name="password"  placeholder="请输入密码">
+
                 </div>
-                <div class="layui-form-item" id="loginbtn">
-                    <button type="submit"  class="layui-btn" lay-filter="save" lay-submit="">
-                        登 录
-                    </button>
+                <div class="am-form-group tpl-login-remember-me">
+                    <input id="remember-me" type="checkbox">
+                    <label for="remember-me">记住密码</label>
+
+                </div>
+                <div class="am-form-group">
+                    <button type="submit" class="am-btn am-btn-primary  am-btn-block tpl-btn-bg-color-success  tpl-login-btn">提交</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
-<p style="color:#fff;text-align: center;">Copyright © 2017.Company name All rights X-admin </p>
-<script src="{{asset('admin/lib/layui/layui.js')}}" charset="utf-8">
-</script>
-<script>
-    layui.use(['form'],
-            function() {
-                $ = layui.jquery;
-                var form = layui.form(),
-                        layer = layui.layer;
+<script src="{{asset('admin/js/amazeui.min.js')}}"></script>
+<script src="{{asset('admin/js/app.js')}}"></script>
 
-
-            });
-
-</script>
 </body>
 
 </html>
