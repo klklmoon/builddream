@@ -1,146 +1,225 @@
 @section('header')
-<!-- logo -->
-<div class="am-fl tpl-header-logo">
-    <a href="javascript:;"><img src="{{asset('admin/img/logo.png')}}" alt=""></a>
+<div class="navbar-header">
+    <a class="navbar-brand" href="index.html"><img src="{{asset('admin/images/logo_light.png')}}" alt=""></a>
+
+    <ul class="nav navbar-nav visible-xs-block">
+        <li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
+        <li><a class="sidebar-mobile-main-toggle"><i class="icon-paragraph-justify3"></i></a></li>
+    </ul>
 </div>
-<!-- 右侧内容 -->
-<div class="tpl-header-fluid">
-    <!-- 侧边切换 -->
-    <div class="am-fl tpl-header-switch-button am-icon-list">
-                    <span>
 
-                </span>
-    </div>
-    <!-- 搜索 -->
-    <div class="am-fl tpl-header-search">
-        <form class="tpl-header-search-form" action="javascript:;">
-            <button class="tpl-header-search-btn am-icon-search"></button>
-            <input class="tpl-header-search-box" type="text" placeholder="搜索内容...">
-        </form>
-    </div>
-    <!-- 其它功能-->
-    <div class="am-fr tpl-header-navbar">
-        <ul>
-            <!-- 欢迎语 -->
-            <li class="am-text-sm tpl-header-navbar-welcome">
-                <a href="javascript:;">欢迎你, <span>{{Auth::guard('admin')->user()->username}}</span> </a>
-            </li>
+<div class="navbar-collapse collapse" id="navbar-mobile">
+    <ul class="nav navbar-nav">
+        <li><a class="sidebar-control sidebar-main-toggle hidden-xs"><i class="icon-paragraph-justify3"></i></a></li>
 
-            <!-- 新邮件 -->
-            <li class="am-dropdown tpl-dropdown" data-am-dropdown>
-                <a href="javascript:;" class="am-dropdown-toggle tpl-dropdown-toggle" data-am-dropdown-toggle>
-                    <i class="am-icon-envelope"></i>
-                    <span class="am-badge am-badge-success am-round item-feed-badge">4</span>
-                </a>
-                <!-- 弹出列表 -->
-                <ul class="am-dropdown-content tpl-dropdown-content">
-                    <li class="tpl-dropdown-menu-messages">
-                        <a href="javascript:;" class="tpl-dropdown-menu-messages-item am-cf">
-                            <div class="menu-messages-ico">
-                                <img src="{{asset('admin/img/user04.png')}}" alt="">
-                            </div>
-                            <div class="menu-messages-time">
-                                3小时前
-                            </div>
-                            <div class="menu-messages-content">
-                                <div class="menu-messages-content-title">
-                                    <i class="am-icon-circle-o am-text-success"></i>
-                                    <span>夕风色</span>
-                                </div>
-                                <div class="am-text-truncate"> Amaze UI 的诞生，依托于 GitHub 及其他技术社区上一些优秀的资源；Amaze UI 的成长，则离不开用户的支持。 </div>
-                                <div class="menu-messages-content-time">2016-09-21 下午 16:40</div>
-                            </div>
-                        </a>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="icon-git-compare"></i>
+                <span class="visible-xs-inline-block position-right">Git updates</span>
+                <span class="badge bg-warning-400">9</span>
+            </a>
+
+            <div class="dropdown-menu dropdown-content">
+                <div class="dropdown-content-heading">
+                    Git updates
+                    <ul class="icons-list">
+                        <li><a href="#"><i class="icon-sync"></i></a></li>
+                    </ul>
+                </div>
+
+                <ul class="media-list dropdown-content-body width-350">
+                    <li class="media">
+                        <div class="media-left">
+                            <a href="#" class="btn border-primary text-primary btn-flat btn-rounded btn-icon btn-sm"><i class="icon-git-pull-request"></i></a>
+                        </div>
+
+                        <div class="media-body">
+                            Drop the IE <a href="#">specific hacks</a> for temporal inputs
+                            <div class="media-annotation">4 minutes ago</div>
+                        </div>
                     </li>
 
-                    <li class="tpl-dropdown-menu-messages">
-                        <a href="javascript:;" class="tpl-dropdown-menu-messages-item am-cf">
-                            <div class="menu-messages-ico">
-                                <img src="{{asset('admin/img/user02.png')}}" alt="">
-                            </div>
-                            <div class="menu-messages-time">
-                                5天前
-                            </div>
-                            <div class="menu-messages-content">
-                                <div class="menu-messages-content-title">
-                                    <i class="am-icon-circle-o am-text-warning"></i>
-                                    <span>禁言小张</span>
-                                </div>
-                                <div class="am-text-truncate"> 为了能最准确的传达所描述的问题， 建议你在反馈时附上演示，方便我们理解。 </div>
-                                <div class="menu-messages-content-time">2016-09-16 上午 09:23</div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="tpl-dropdown-menu-messages">
-                        <a href="javascript:;" class="tpl-dropdown-menu-messages-item am-cf">
-                            <i class="am-icon-circle-o"></i> 进入列表…
-                        </a>
-                    </li>
-                </ul>
-            </li>
+                    <li class="media">
+                        <div class="media-left">
+                            <a href="#" class="btn border-warning text-warning btn-flat btn-rounded btn-icon btn-sm"><i class="icon-git-commit"></i></a>
+                        </div>
 
-            <!-- 新提示 -->
-            <li class="am-dropdown" data-am-dropdown>
-                <a href="javascript:;" class="am-dropdown-toggle" data-am-dropdown-toggle>
-                    <i class="am-icon-bell"></i>
-                    <span class="am-badge am-badge-warning am-round item-feed-badge">5</span>
-                </a>
-
-                <!-- 弹出列表 -->
-                <ul class="am-dropdown-content tpl-dropdown-content">
-                    <li class="tpl-dropdown-menu-notifications">
-                        <a href="javascript:;" class="tpl-dropdown-menu-notifications-item am-cf">
-                            <div class="tpl-dropdown-menu-notifications-title">
-                                <i class="am-icon-line-chart"></i>
-                                <span> 有6笔新的销售订单</span>
-                            </div>
-                            <div class="tpl-dropdown-menu-notifications-time">
-                                12分钟前
-                            </div>
-                        </a>
-                    </li>
-                    <li class="tpl-dropdown-menu-notifications">
-                        <a href="javascript:;" class="tpl-dropdown-menu-notifications-item am-cf">
-                            <div class="tpl-dropdown-menu-notifications-title">
-                                <i class="am-icon-star"></i>
-                                <span> 有3个来自人事部的消息</span>
-                            </div>
-                            <div class="tpl-dropdown-menu-notifications-time">
-                                30分钟前
-                            </div>
-                        </a>
-                    </li>
-                    <li class="tpl-dropdown-menu-notifications">
-                        <a href="javascript:;" class="tpl-dropdown-menu-notifications-item am-cf">
-                            <div class="tpl-dropdown-menu-notifications-title">
-                                <i class="am-icon-folder-o"></i>
-                                <span> 上午开会记录存档</span>
-                            </div>
-                            <div class="tpl-dropdown-menu-notifications-time">
-                                1天前
-                            </div>
-                        </a>
+                        <div class="media-body">
+                            Add full font overrides for popovers and tooltips
+                            <div class="media-annotation">36 minutes ago</div>
+                        </div>
                     </li>
 
+                    <li class="media">
+                        <div class="media-left">
+                            <a href="#" class="btn border-info text-info btn-flat btn-rounded btn-icon btn-sm"><i class="icon-git-branch"></i></a>
+                        </div>
 
-                    <li class="tpl-dropdown-menu-notifications">
-                        <a href="javascript:;" class="tpl-dropdown-menu-notifications-item am-cf">
-                            <i class="am-icon-bell"></i> 进入列表…
-                        </a>
+                        <div class="media-body">
+                            <a href="#">Chris Arney</a> created a new <span class="text-semibold">Design</span> branch
+                            <div class="media-annotation">2 hours ago</div>
+                        </div>
+                    </li>
+
+                    <li class="media">
+                        <div class="media-left">
+                            <a href="#" class="btn border-success text-success btn-flat btn-rounded btn-icon btn-sm"><i class="icon-git-merge"></i></a>
+                        </div>
+
+                        <div class="media-body">
+                            <a href="#">Eugene Kopyov</a> merged <span class="text-semibold">Master</span> and <span class="text-semibold">Dev</span> branches
+                            <div class="media-annotation">Dec 18, 18:36</div>
+                        </div>
+                    </li>
+
+                    <li class="media">
+                        <div class="media-left">
+                            <a href="#" class="btn border-primary text-primary btn-flat btn-rounded btn-icon btn-sm"><i class="icon-git-pull-request"></i></a>
+                        </div>
+
+                        <div class="media-body">
+                            Have Carousel ignore keyboard events
+                            <div class="media-annotation">Dec 12, 05:46</div>
+                        </div>
                     </li>
                 </ul>
-            </li>
 
-            <!-- 退出 -->
-            <li class="am-text-sm">
-                <a href="{{ url('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                    <span class="am-icon-sign-out"></span> 退出
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        {{ csrf_field() }}
-                    </form>
-                </a>
-            </li>
-        </ul>
-    </div>
+                <div class="dropdown-content-footer">
+                    <a href="#" data-popup="tooltip" title="All activity"><i class="icon-menu display-block"></i></a>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    <p class="navbar-text"><span class="label bg-success">Online</span></p>
+
+    <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown language-switch">
+            <a class="dropdown-toggle" data-toggle="dropdown">
+                <img src="{{asset('admin/images/flags/gb.png')}}" class="position-left" alt="">
+                English
+                <span class="caret"></span>
+            </a>
+
+            <ul class="dropdown-menu">
+                <li><a class="deutsch"><img src="{{asset('admin/images/flags/de.png')}}" alt=""> Deutsch</a></li>
+                <li><a class="ukrainian"><img src="{{asset('admin/images/flags/ua.png')}}" alt=""> Українська</a></li>
+                <li><a class="english"><img src="{{asset('admin/images/flags/gb.png')}}" alt=""> English</a></li>
+                <li><a class="espana"><img src="{{asset('admin/images/flags/es.png')}}" alt=""> España</a></li>
+                <li><a class="russian"><img src="{{asset('admin/images/flags/ru.png')}}" alt=""> Русский</a></li>
+            </ul>
+        </li>
+
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="icon-bubbles4"></i>
+                <span class="visible-xs-inline-block position-right">Messages</span>
+                <span class="badge bg-warning-400">2</span>
+            </a>
+
+            <div class="dropdown-menu dropdown-content width-350">
+                <div class="dropdown-content-heading">
+                    Messages
+                    <ul class="icons-list">
+                        <li><a href="#"><i class="icon-compose"></i></a></li>
+                    </ul>
+                </div>
+
+                <ul class="media-list dropdown-content-body">
+                    <li class="media">
+                        <div class="media-left">
+                            <img src="{{asset('admin/images/placeholder.jpg')}}" class="img-circle img-sm" alt="">
+                            <span class="badge bg-danger-400 media-badge">5</span>
+                        </div>
+
+                        <div class="media-body">
+                            <a href="#" class="media-heading">
+                                <span class="text-semibold">James Alexander</span>
+                                <span class="media-annotation pull-right">04:58</span>
+                            </a>
+
+                            <span class="text-muted">who knows, maybe that would be the best thing for me...</span>
+                        </div>
+                    </li>
+
+                    <li class="media">
+                        <div class="media-left">
+                            <img src="{{asset('admin/images/placeholder.jpg')}}" class="img-circle img-sm" alt="">
+                            <span class="badge bg-danger-400 media-badge">4</span>
+                        </div>
+
+                        <div class="media-body">
+                            <a href="#" class="media-heading">
+                                <span class="text-semibold">Margo Baker</span>
+                                <span class="media-annotation pull-right">12:16</span>
+                            </a>
+
+                            <span class="text-muted">That was something he was unable to do because...</span>
+                        </div>
+                    </li>
+
+                    <li class="media">
+                        <div class="media-left"><img src="{{asset('admin/images/placeholder.jpg')}}" class="img-circle img-sm" alt=""></div>
+                        <div class="media-body">
+                            <a href="#" class="media-heading">
+                                <span class="text-semibold">Jeremy Victorino</span>
+                                <span class="media-annotation pull-right">22:48</span>
+                            </a>
+
+                            <span class="text-muted">But that would be extremely strained and suspicious...</span>
+                        </div>
+                    </li>
+
+                    <li class="media">
+                        <div class="media-left"><img src="{{asset('admin/images/placeholder.jpg')}}" class="img-circle img-sm" alt=""></div>
+                        <div class="media-body">
+                            <a href="#" class="media-heading">
+                                <span class="text-semibold">Beatrix Diaz</span>
+                                <span class="media-annotation pull-right">Tue</span>
+                            </a>
+
+                            <span class="text-muted">What a strenuous career it is that I've chosen...</span>
+                        </div>
+                    </li>
+
+                    <li class="media">
+                        <div class="media-left"><img src="{{asset('admin/images/placeholder.jpg')}}" class="img-circle img-sm" alt=""></div>
+                        <div class="media-body">
+                            <a href="#" class="media-heading">
+                                <span class="text-semibold">Richard Vango</span>
+                                <span class="media-annotation pull-right">Mon</span>
+                            </a>
+
+                            <span class="text-muted">Other travelling salesmen live a life of luxury...</span>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="dropdown-content-footer">
+                    <a href="#" data-popup="tooltip" title="All messages"><i class="icon-menu display-block"></i></a>
+                </div>
+            </div>
+        </li>
+
+        <li class="dropdown dropdown-user">
+            <a class="dropdown-toggle" data-toggle="dropdown">
+                <img src="{{asset('admin/images/placeholder.jpg')}}" alt="">
+                <span>{{Auth::guard('admin')->user()->username}}</span>
+                <i class="caret"></i>
+            </a>
+
+            <ul class="dropdown-menu dropdown-menu-right">
+                <li><a href="#"><i class="icon-user-plus"></i> My profile</a></li>
+                <li><a href="#"><i class="icon-coins"></i> My balance</a></li>
+                <li><a href="#"><span class="badge bg-teal-400 pull-right">58</span> <i class="icon-comment-discussion"></i> Messages</a></li>
+                <li class="divider"></li>
+                <li><a href="#"><i class="icon-cog5"></i> Account settings</a></li>
+                <li><a href="{{url('logout')}}" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="icon-switch2"></i> Logout</a></li>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+            </ul>
+        </li>
+    </ul>
 </div>
 @endsection
