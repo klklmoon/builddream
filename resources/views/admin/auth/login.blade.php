@@ -1,59 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{{config('app.name')}}后台管理系统</title>
-    <meta name="description" content="这是一个 index 页面">
-    <meta name="keywords" content="index">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="renderer" content="webkit">
-    <meta http-equiv="Cache-Control" content="no-siteapp" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" type="image/png" href="{{asset('admin/i/favicon.png')}}">
-    <link rel="apple-touch-icon-precomposed" href="{{asset('admin/i/app-icon72x72@2x.png')}}">
-    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
-    <link rel="stylesheet" href="{{asset('admin/css/amazeui.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('admin/css/amazeui.datatables.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('admin/css/app.css')}}">
-    <script src="{{asset('admin/js/jquery.min.js')}}"></script>
+    <title>{{config('app.name')}}后台管理系统</title>
+
+    <!-- Global stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+    <link href="{{asset('admin/css/icons/icomoon/styles.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('admin/css/minified/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('admin/css/minified/core.min.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('admin/css/minified/components.min.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('admin/css/minified/colors.min.css')}}" rel="stylesheet" type="text/css">
+    <!-- /global stylesheets -->
+
+    <!-- Core JS files -->
+    <script type="text/javascript" src="{{asset('admin/js/plugins/loaders/pace.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('admin/js/core/libraries/jquery.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('admin/js/core/libraries/bootstrap.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('admin/js/plugins/loaders/blockui.min.js')}}"></script>
+    <!-- /core JS files -->
+
+    <!-- Theme JS files -->
+    <script type="text/javascript" src="{{asset('admin/js/plugins/forms/styling/uniform.min.js')}}"></script>
+
+    <script type="text/javascript" src="{{asset('admin/js/core/app.js')}}"></script>
+    <script type="text/javascript" src="{{asset('admin/js/pages/login.js')}}"></script>
+    <!-- /theme JS files -->
 
 </head>
 
-<body class="theme-white" data-type="login">
-<div class="am-g tpl-g">
-    <div class="tpl-login">
-        <div class="tpl-login-content">
-            <div class="tpl-login-logo">
+<body class="bg-slate-800">
+
+<!-- Page container -->
+<div class="page-container login-container">
+
+    <!-- Page content -->
+    <div class="page-content">
+
+        <!-- Main content -->
+        <div class="content-wrapper">
+
+            <!-- Content area -->
+            <div class="content">
+
+                <!-- Advanced login -->
+                <form method="POST" action="{{ url('login')}}">
+                    {{ csrf_field() }}
+                    <div class="panel panel-body login-form">
+                        <div class="text-center">
+                            <div class="icon-object border-warning-400 text-warning-400"><i class="icon-people"></i></div>
+                            <h5 class="content-group-lg">Login to your account <small class="display-block">Enter your credentials</small></h5>
+                        </div>
+
+                        <div class="form-group has-feedback has-feedback-left">
+                            <input type="text" class="form-control" placeholder="Username" name="username">
+                            <div class="form-control-feedback">
+                                <i class="icon-user text-muted"></i>
+                            </div>
+                        </div>
+
+                        <div class="form-group has-feedback has-feedback-left">
+                            <input type="text" class="form-control" placeholder="Password" name="password">
+                            <div class="form-control-feedback">
+                                <i class="icon-lock2 text-muted"></i>
+                            </div>
+                        </div>
+
+                        <div class="form-group login-options">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" class="styled" checked="checked">
+                                        Remember
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn bg-blue btn-block">Login <i class="icon-circle-right2 position-right"></i></button>
+                        </div>
+                    </div>
+                </form>
+                <!-- /advanced login -->
+
+
+                <!-- Footer -->
+                <div class="footer text-white">
+                    &copy; 2015. <a href="#" class="text-white">Limitless Web App Kit</a> by <a href="http://themeforest.net/user/Kopyov" class="text-white" target="_blank">Eugene Kopyov</a>
+                </div>
+                <!-- /footer -->
 
             </div>
-            <form class="am-form tpl-form-line-form" method="POST" action="{{ url('login')}}">
-            {{ csrf_field() }}
-                <div class="am-form-group">
-                    <input type="text" class="tpl-form-input" id="user-name" name="username" placeholder="请输入账号">
+            <!-- /content area -->
 
-                </div>
-
-                <div class="am-form-group">
-                    <input type="password" class="tpl-form-input" id="user-name" name="password"  placeholder="请输入密码">
-
-                </div>
-                <div class="am-form-group tpl-login-remember-me">
-                    <input id="remember-me" type="checkbox">
-                    <label for="remember-me">记住密码</label>
-
-                </div>
-                <div class="am-form-group">
-                    <button type="submit" class="am-btn am-btn-primary  am-btn-block tpl-btn-bg-color-success  tpl-login-btn">提交</button>
-                </div>
-            </form>
         </div>
+        <!-- /main content -->
+
     </div>
+    <!-- /page content -->
+
 </div>
-<script src="{{asset('admin/js/amazeui.min.js')}}"></script>
-<script src="{{asset('admin/js/app.js')}}"></script>
+<!-- /page container -->
 
 </body>
-
 </html>

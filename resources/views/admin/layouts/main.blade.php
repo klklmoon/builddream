@@ -1,302 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{{config('app.name')}}后台管理系统</title>
-    <meta name="description" content="这是一个 index 页面">
-    <meta name="keywords" content="index">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="renderer" content="webkit">
-    <meta http-equiv="Cache-Control" content="no-siteapp" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" type="image/png" href="{{asset('admin/i/favicon.png')}}">
-    <link rel="apple-touch-icon-precomposed" href="{{asset('admin/i/app-icon72x72@2x.png')}}">
-    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
-    <script src="{{asset('admin/js/echarts.min.js')}}"></script>
-    <link rel="stylesheet" href="{{asset('admin/css/amazeui.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('admin/css/amazeui.datatables.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('admin/css/app.css')}}">
-    <script src="{{asset('admin/js/jquery.min.js')}}"></script>
+    <title>{{config('app.name')}}后台管理系统</title>
+
+    <!-- Global stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+    <link href="{{asset('admin/css/icons/icomoon/styles.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('admin/css/minified/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('admin/css/minified/core.min.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('admin/css/minified/components.min.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('admin/css/minified/colors.min.css')}}" rel="stylesheet" type="text/css">
+    <!-- /global stylesheets -->
+
+    <!-- Core JS files -->
+    <script type="text/javascript" src="{{asset('admin/js/plugins/loaders/pace.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('admin/js/core/libraries/jquery.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('admin/js/core/libraries/bootstrap.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('admin/js/plugins/loaders/blockui.min.js')}}"></script>
+    <!-- /core JS files -->
+
+    <!-- Theme JS files -->
+    <script type="text/javascript" src="{{asset('admin/js/plugins/visualization/d3/d3.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('admin/js/plugins/visualization/d3/d3_tooltip.js')}}"></script>
+    <script type="text/javascript" src="{{asset('admin/js/plugins/forms/styling/switchery.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('admin/js/plugins/forms/styling/uniform.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('admin/js/plugins/forms/selects/bootstrap_multiselect.js')}}"></script>
+    <script type="text/javascript" src="{{asset('admin/js/plugins/ui/moment/moment.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('admin/js/plugins/pickers/daterangepicker.js')}}"></script>
+
+    <script type="text/javascript" src="{{asset('admin/js/core/app.js')}}"></script>
+    <script type="text/javascript" src="{{asset('admin/js/pages/dashboard.js')}}"></script>
+    <!-- /theme JS files -->
 
 </head>
 
-<body class="theme-white" data-type="index">
-<div class="am-g tpl-g">
-    <!-- 头部 -->
-    <header>
-        <!-- logo -->
-        <div class="am-fl tpl-header-logo">
-            <a href="javascript:;"><img src="{{asset('admin/img/logo.png')}}" alt=""></a>
-        </div>
-        <!-- 右侧内容 -->
-        <div class="tpl-header-fluid">
-            <!-- 侧边切换 -->
-            <div class="am-fl tpl-header-switch-button am-icon-list">
-                    <span>
+<body>
 
-                </span>
-            </div>
-            <!-- 搜索 -->
-            <div class="am-fl tpl-header-search">
-                <form class="tpl-header-search-form" action="javascript:;">
-                    <button class="tpl-header-search-btn am-icon-search"></button>
-                    <input class="tpl-header-search-box" type="text" placeholder="搜索内容...">
-                </form>
-            </div>
-            <!-- 其它功能-->
-            <div class="am-fr tpl-header-navbar">
-                <ul>
-                    <!-- 欢迎语 -->
-                    <li class="am-text-sm tpl-header-navbar-welcome">
-                        <a href="javascript:;">欢迎你, <span>{{Auth::user()->username}}</span> </a>
-                    </li>
+<!-- Main navbar -->
+<div class="navbar navbar-default header-highlight">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="index.html"><img src="{{asset('admin/images/logo_light.png')}}" alt=""></a>
 
-                    <!-- 新邮件 -->
-                    <li class="am-dropdown tpl-dropdown" data-am-dropdown>
-                        <a href="javascript:;" class="am-dropdown-toggle tpl-dropdown-toggle" data-am-dropdown-toggle>
-                            <i class="am-icon-envelope"></i>
-                            <span class="am-badge am-badge-success am-round item-feed-badge">4</span>
-                        </a>
-                        <!-- 弹出列表 -->
-                        <ul class="am-dropdown-content tpl-dropdown-content">
-                            <li class="tpl-dropdown-menu-messages">
-                                <a href="javascript:;" class="tpl-dropdown-menu-messages-item am-cf">
-                                    <div class="menu-messages-ico">
-                                        <img src="{{asset('admin/img/user04.png')}}" alt="">
-                                    </div>
-                                    <div class="menu-messages-time">
-                                        3小时前
-                                    </div>
-                                    <div class="menu-messages-content">
-                                        <div class="menu-messages-content-title">
-                                            <i class="am-icon-circle-o am-text-success"></i>
-                                            <span>夕风色</span>
-                                        </div>
-                                        <div class="am-text-truncate"> Amaze UI 的诞生，依托于 GitHub 及其他技术社区上一些优秀的资源；Amaze UI 的成长，则离不开用户的支持。 </div>
-                                        <div class="menu-messages-content-time">2016-09-21 下午 16:40</div>
-                                    </div>
-                                </a>
-                            </li>
-
-                            <li class="tpl-dropdown-menu-messages">
-                                <a href="javascript:;" class="tpl-dropdown-menu-messages-item am-cf">
-                                    <div class="menu-messages-ico">
-                                        <img src="{{asset('admin/img/user02.png')}}" alt="">
-                                    </div>
-                                    <div class="menu-messages-time">
-                                        5天前
-                                    </div>
-                                    <div class="menu-messages-content">
-                                        <div class="menu-messages-content-title">
-                                            <i class="am-icon-circle-o am-text-warning"></i>
-                                            <span>禁言小张</span>
-                                        </div>
-                                        <div class="am-text-truncate"> 为了能最准确的传达所描述的问题， 建议你在反馈时附上演示，方便我们理解。 </div>
-                                        <div class="menu-messages-content-time">2016-09-16 上午 09:23</div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="tpl-dropdown-menu-messages">
-                                <a href="javascript:;" class="tpl-dropdown-menu-messages-item am-cf">
-                                    <i class="am-icon-circle-o"></i> 进入列表…
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <!-- 新提示 -->
-                    <li class="am-dropdown" data-am-dropdown>
-                        <a href="javascript:;" class="am-dropdown-toggle" data-am-dropdown-toggle>
-                            <i class="am-icon-bell"></i>
-                            <span class="am-badge am-badge-warning am-round item-feed-badge">5</span>
-                        </a>
-
-                        <!-- 弹出列表 -->
-                        <ul class="am-dropdown-content tpl-dropdown-content">
-                            <li class="tpl-dropdown-menu-notifications">
-                                <a href="javascript:;" class="tpl-dropdown-menu-notifications-item am-cf">
-                                    <div class="tpl-dropdown-menu-notifications-title">
-                                        <i class="am-icon-line-chart"></i>
-                                        <span> 有6笔新的销售订单</span>
-                                    </div>
-                                    <div class="tpl-dropdown-menu-notifications-time">
-                                        12分钟前
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="tpl-dropdown-menu-notifications">
-                                <a href="javascript:;" class="tpl-dropdown-menu-notifications-item am-cf">
-                                    <div class="tpl-dropdown-menu-notifications-title">
-                                        <i class="am-icon-star"></i>
-                                        <span> 有3个来自人事部的消息</span>
-                                    </div>
-                                    <div class="tpl-dropdown-menu-notifications-time">
-                                        30分钟前
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="tpl-dropdown-menu-notifications">
-                                <a href="javascript:;" class="tpl-dropdown-menu-notifications-item am-cf">
-                                    <div class="tpl-dropdown-menu-notifications-title">
-                                        <i class="am-icon-folder-o"></i>
-                                        <span> 上午开会记录存档</span>
-                                    </div>
-                                    <div class="tpl-dropdown-menu-notifications-time">
-                                        1天前
-                                    </div>
-                                </a>
-                            </li>
-
-
-                            <li class="tpl-dropdown-menu-notifications">
-                                <a href="javascript:;" class="tpl-dropdown-menu-notifications-item am-cf">
-                                    <i class="am-icon-bell"></i> 进入列表…
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <!-- 退出 -->
-                    <li class="am-text-sm">
-                        <a href="{{ url('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                            <span class="am-icon-sign-out"></span> 退出
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                {{ csrf_field() }}
-                            </form>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-    </header>
-    <!-- 侧边导航栏 -->
-    <div class="left-sidebar">
-        <!-- 用户信息 -->
-        <div class="tpl-sidebar-user-panel">
-            <div class="tpl-user-panel-slide-toggleable">
-                <div class="tpl-user-panel-profile-picture">
-                    <img src="{{asset('admin/img/user04.png')}}" alt="">
-                </div>
-                    <span class="user-panel-logged-in-text">
-              <i class="am-icon-circle-o am-text-success tpl-user-panel-status-icon"></i>
-              禁言小张
-          </span>
-                <a href="javascript:;" class="tpl-user-panel-action-link"> <span class="am-icon-pencil"></span> 账号设置</a>
-            </div>
-        </div>
-
-        <!-- 菜单 -->
-        <ul class="sidebar-nav">
-            <li class="sidebar-nav-link">
-                <a href="{{url('home')}}" class="active"><i class="am-icon-home sidebar-nav-link-logo"></i> 首页</a>
-            </li>
-            <li class="sidebar-nav-link">
-                <a href="javascript:;" class="sidebar-nav-sub-title"><i class="am-icon-user sidebar-nav-link-logo"></i> 用户管理<span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span></a>
-                <ul class="sidebar-nav sidebar-nav-sub">
-                    <li class="sidebar-nav-link">
-                        <a href="table-list.html"><span class="am-icon-angle-right sidebar-nav-link-logo"></span> 用户列表</a>
-                    </li>
-                    <li class="sidebar-nav-link">
-                        <a href="table-list-img.html"><span class="am-icon-angle-right sidebar-nav-link-logo"></span> 角色列表</a>
-                    </li>
-                </ul>
-            </li>
-            <li class="sidebar-nav-link">
-                <a href="javascript:;" class="sidebar-nav-sub-title"><i class="am-icon-user sidebar-nav-link-logo"></i> 项目管理<span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span></a>
-                <ul class="sidebar-nav sidebar-nav-sub">
-                    <li class="sidebar-nav-link">
-                        <a href="table-list.html"><span class="am-icon-angle-right sidebar-nav-link-logo"></span> 用户列表</a>
-                    </li>
-                    <li class="sidebar-nav-link">
-                        <a href="table-list-img.html"><span class="am-icon-angle-right sidebar-nav-link-logo"></span> 角色列表</a>
-                    </li>
-                </ul>
-            </li>
-            <li class="sidebar-nav-link">
-                <a href="javascript:;" class="sidebar-nav-sub-title"><i class="am-icon-tasks sidebar-nav-link-logo"></i> 任务管理<span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span></a>
-                <ul class="sidebar-nav sidebar-nav-sub">
-                    <li class="sidebar-nav-link">
-                        <a href="table-list.html"><span class="am-icon-angle-right sidebar-nav-link-logo"></span> 用户列表</a>
-                    </li>
-                    <li class="sidebar-nav-link">
-                        <a href="table-list-img.html"><span class="am-icon-angle-right sidebar-nav-link-logo"></span> 角色列表</a>
-                    </li>
-                </ul>
-            </li>
-            <li class="sidebar-nav-link">
-                <a href="calendar.html">
-                    <i class="am-icon-calendar sidebar-nav-link-logo"></i> 日历
-                </a>
-            </li>
-            <li class="sidebar-nav-link">
-                <a href="form.html">
-                    <i class="am-icon-wpforms sidebar-nav-link-logo"></i> 表单
-
-                </a>
-            </li>
-            <li class="sidebar-nav-link">
-                <a href="chart.html">
-                    <i class="am-icon-bar-chart sidebar-nav-link-logo"></i> 图表
-
-                </a>
-            </li>
-
-            <li class="sidebar-nav-heading">Page<span class="sidebar-nav-heading-info"> 常用页面</span></li>
-            <li class="sidebar-nav-link">
-                <a href="javascript:;" class="sidebar-nav-sub-title">
-                    <i class="am-icon-table sidebar-nav-link-logo"></i> 数据列表
-                    <span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
-                </a>
-                <ul class="sidebar-nav sidebar-nav-sub">
-                    <li class="sidebar-nav-link">
-                        <a href="table-list.html">
-                            <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 文字列表
-                        </a>
-                    </li>
-
-                    <li class="sidebar-nav-link">
-                        <a href="table-list-img.html">
-                            <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 图文列表
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="sidebar-nav-link">
-                <a href="sign-up.html">
-                    <i class="am-icon-clone sidebar-nav-link-logo"></i> 注册
-                    <span class="am-badge am-badge-secondary sidebar-nav-link-logo-ico am-round am-fr am-margin-right-sm">6</span>
-                </a>
-            </li>
-            <li class="sidebar-nav-link">
-                <a href="login.html">
-                    <i class="am-icon-key sidebar-nav-link-logo"></i> 登录
-                </a>
-            </li>
-            <li class="sidebar-nav-link">
-                <a href="404.html">
-                    <i class="am-icon-tv sidebar-nav-link-logo"></i> 404错误
-                </a>
-            </li>
-
+        <ul class="nav navbar-nav visible-xs-block">
+            <li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
+            <li><a class="sidebar-mobile-main-toggle"><i class="icon-paragraph-justify3"></i></a></li>
         </ul>
     </div>
-     <!-- 内容区域 -->
-    @yield('content')
-    <div data-am-widget="gotop" class="am-gotop am-gotop-fixed" >
-        <a href="#top" title="">
-            <img class="am-gotop-icon-custom" src="http://amazeui.b0.upaiyun.com/assets/i/cpts/gotop/goTop.gif" />
-        </a>
+
+    <div class="navbar-collapse collapse" id="navbar-mobile">
+        <ul class="nav navbar-nav">
+            <li><a class="sidebar-control sidebar-main-toggle hidden-xs"><i class="icon-paragraph-justify3"></i></a></li>
+
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="icon-git-compare"></i>
+                    <span class="visible-xs-inline-block position-right">Git updates</span>
+                    <span class="badge bg-warning-400">9</span>
+                </a>
+
+                <div class="dropdown-menu dropdown-content">
+                    <div class="dropdown-content-heading">
+                        Git updates
+                        <ul class="icons-list">
+                            <li><a href="#"><i class="icon-sync"></i></a></li>
+                        </ul>
+                    </div>
+
+                    <ul class="media-list dropdown-content-body width-350">
+                        <li class="media">
+                            <div class="media-left">
+                                <a href="#" class="btn border-primary text-primary btn-flat btn-rounded btn-icon btn-sm"><i class="icon-git-pull-request"></i></a>
+                            </div>
+
+                            <div class="media-body">
+                                Drop the IE <a href="#">specific hacks</a> for temporal inputs
+                                <div class="media-annotation">4 minutes ago</div>
+                            </div>
+                        </li>
+
+                        <li class="media">
+                            <div class="media-left">
+                                <a href="#" class="btn border-warning text-warning btn-flat btn-rounded btn-icon btn-sm"><i class="icon-git-commit"></i></a>
+                            </div>
+
+                            <div class="media-body">
+                                Add full font overrides for popovers and tooltips
+                                <div class="media-annotation">36 minutes ago</div>
+                            </div>
+                        </li>
+
+                        <li class="media">
+                            <div class="media-left">
+                                <a href="#" class="btn border-info text-info btn-flat btn-rounded btn-icon btn-sm"><i class="icon-git-branch"></i></a>
+                            </div>
+
+                            <div class="media-body">
+                                <a href="#">Chris Arney</a> created a new <span class="text-semibold">Design</span> branch
+                                <div class="media-annotation">2 hours ago</div>
+                            </div>
+                        </li>
+
+                        <li class="media">
+                            <div class="media-left">
+                                <a href="#" class="btn border-success text-success btn-flat btn-rounded btn-icon btn-sm"><i class="icon-git-merge"></i></a>
+                            </div>
+
+                            <div class="media-body">
+                                <a href="#">Eugene Kopyov</a> merged <span class="text-semibold">Master</span> and <span class="text-semibold">Dev</span> branches
+                                <div class="media-annotation">Dec 18, 18:36</div>
+                            </div>
+                        </li>
+
+                        <li class="media">
+                            <div class="media-left">
+                                <a href="#" class="btn border-primary text-primary btn-flat btn-rounded btn-icon btn-sm"><i class="icon-git-pull-request"></i></a>
+                            </div>
+
+                            <div class="media-body">
+                                Have Carousel ignore keyboard events
+                                <div class="media-annotation">Dec 12, 05:46</div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="dropdown-content-footer">
+                        <a href="#" data-popup="tooltip" title="All activity"><i class="icon-menu display-block"></i></a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <p class="navbar-text"><span class="label bg-success">Online</span></p>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown language-switch">
+                <a class="dropdown-toggle" data-toggle="dropdown">
+                    <img src="{{asset('admin/images/flags/gb.png')}}" class="position-left" alt="">
+                    English
+                    <span class="caret"></span>
+                </a>
+
+                <ul class="dropdown-menu">
+                    <li><a class="deutsch"><img src="{{asset('admin/images/flags/de.png')}}" alt=""> Deutsch</a></li>
+                    <li><a class="ukrainian"><img src="{{asset('admin/images/flags/ua.png')}}" alt=""> Українська</a></li>
+                    <li><a class="english"><img src="{{asset('admin/images/flags/gb.png')}}" alt=""> English</a></li>
+                    <li><a class="espana"><img src="{{asset('admin/images/flags/es.png')}}" alt=""> España</a></li>
+                    <li><a class="russian"><img src="{{asset('admin/images/flags/ru.png')}}" alt=""> Русский</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="icon-bubbles4"></i>
+                    <span class="visible-xs-inline-block position-right">Messages</span>
+                    <span class="badge bg-warning-400">2</span>
+                </a>
+
+                <div class="dropdown-menu dropdown-content width-350">
+                    <div class="dropdown-content-heading">
+                        Messages
+                        <ul class="icons-list">
+                            <li><a href="#"><i class="icon-compose"></i></a></li>
+                        </ul>
+                    </div>
+
+                    <ul class="media-list dropdown-content-body">
+                        <li class="media">
+                            <div class="media-left">
+                                <img src="{{asset('admin/images/placeholder.jpg')}}" class="img-circle img-sm" alt="">
+                                <span class="badge bg-danger-400 media-badge">5</span>
+                            </div>
+
+                            <div class="media-body">
+                                <a href="#" class="media-heading">
+                                    <span class="text-semibold">James Alexander</span>
+                                    <span class="media-annotation pull-right">04:58</span>
+                                </a>
+
+                                <span class="text-muted">who knows, maybe that would be the best thing for me...</span>
+                            </div>
+                        </li>
+
+                        <li class="media">
+                            <div class="media-left">
+                                <img src="{{asset('admin/images/placeholder.jpg')}}" class="img-circle img-sm" alt="">
+                                <span class="badge bg-danger-400 media-badge">4</span>
+                            </div>
+
+                            <div class="media-body">
+                                <a href="#" class="media-heading">
+                                    <span class="text-semibold">Margo Baker</span>
+                                    <span class="media-annotation pull-right">12:16</span>
+                                </a>
+
+                                <span class="text-muted">That was something he was unable to do because...</span>
+                            </div>
+                        </li>
+
+                        <li class="media">
+                            <div class="media-left"><img src="{{asset('admin/images/placeholder.jpg')}}" class="img-circle img-sm" alt=""></div>
+                            <div class="media-body">
+                                <a href="#" class="media-heading">
+                                    <span class="text-semibold">Jeremy Victorino</span>
+                                    <span class="media-annotation pull-right">22:48</span>
+                                </a>
+
+                                <span class="text-muted">But that would be extremely strained and suspicious...</span>
+                            </div>
+                        </li>
+
+                        <li class="media">
+                            <div class="media-left"><img src="{{asset('admin/images/placeholder.jpg')}}" class="img-circle img-sm" alt=""></div>
+                            <div class="media-body">
+                                <a href="#" class="media-heading">
+                                    <span class="text-semibold">Beatrix Diaz</span>
+                                    <span class="media-annotation pull-right">Tue</span>
+                                </a>
+
+                                <span class="text-muted">What a strenuous career it is that I've chosen...</span>
+                            </div>
+                        </li>
+
+                        <li class="media">
+                            <div class="media-left"><img src="{{asset('admin/images/placeholder.jpg')}}" class="img-circle img-sm" alt=""></div>
+                            <div class="media-body">
+                                <a href="#" class="media-heading">
+                                    <span class="text-semibold">Richard Vango</span>
+                                    <span class="media-annotation pull-right">Mon</span>
+                                </a>
+
+                                <span class="text-muted">Other travelling salesmen live a life of luxury...</span>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="dropdown-content-footer">
+                        <a href="#" data-popup="tooltip" title="All messages"><i class="icon-menu display-block"></i></a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="dropdown dropdown-user">
+                <a class="dropdown-toggle" data-toggle="dropdown">
+                    <img src="{{asset('admin/images/placeholder.jpg')}}" alt="">
+                    <span>{{Auth::guard('admin')->user()->username}}</span>
+                    <i class="caret"></i>
+                </a>
+
+                <ul class="dropdown-menu dropdown-menu-right">
+                    <li><a href="#"><i class="icon-user-plus"></i> My profile</a></li>
+                    <li><a href="#"><i class="icon-coins"></i> My balance</a></li>
+                    <li><a href="#"><span class="badge bg-teal-400 pull-right">58</span> <i class="icon-comment-discussion"></i> Messages</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#"><i class="icon-cog5"></i> Account settings</a></li>
+                    <li><a href="{{url('logout')}}" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="icon-switch2"></i> Logout</a></li>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
+                </ul>
+            </li>
+        </ul>
     </div>
 </div>
+<!-- /main navbar -->
 
-<script src="{{asset('admin/js/amazeui.min.js')}}"></script>
-<script src="{{asset('admin/js/amazeui.datatables.min.js')}}"></script>
-<script src="{{asset('admin/js/dataTables.responsive.min.js')}}"></script>
-<script src="{{asset('admin/js/app.js')}}"></script>
+
+<!-- Page container -->
+<div class="page-container">
+
+    <!-- Page content -->
+    <div class="page-content">
+
+        <!-- Main sidebar -->
+        <div class="sidebar sidebar-main">
+            @include('admin.public.sidebar')
+            @yield('sidebar')
+        </div>
+        <!-- /main sidebar -->
+
+
+        <!-- Main content -->
+        <div class="content-wrapper">
+            @yield('content')
+        </div>
+        <!-- /main content -->
+
+    </div>
+    <!-- /page content -->
+
+</div>
+<!-- /page container -->
 
 </body>
-
 </html>

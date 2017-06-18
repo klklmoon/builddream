@@ -18,6 +18,7 @@
 Route::group(['namespace' => 'Admin', 'domain' => 'admin.build4dream.com'], function () {
     Auth::routes();
     Route::get('/home','IndexController@index')->name('home');
+    Route::resource('user', 'UserController');
 
 });
 
