@@ -7,9 +7,6 @@
         
     </div>
 
-    <div class="panel-body">
-        Example of a table with <code>striped</code> rows. Use <code>.table-striped</code> added to the base <code>.table</code> class to add zebra-striping to any table odd row within the <code>&lt;tbody&gt;</code>. This styling doesn't work in IE8 and lower as <code>:nth-child</code> CSS selector isn't supported in these browser versions. Striped table can be combined with other table styles.
-    </div>
 
     <div class="table-responsive">
         <table class="table table-striped">
